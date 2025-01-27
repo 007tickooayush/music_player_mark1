@@ -1,8 +1,14 @@
 import { View, Text, SafeAreaView, StatusBar } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { styles } from './styles/styles';
+import { musicPlayerService } from '../musicPlayerService';
 
 const App = (): React.JSX.Element => {
+	
+	useEffect(() => {
+		musicPlayerService();
+	}, []);
+
 	return (
 		<SafeAreaView>
 			<StatusBar />
@@ -18,7 +24,7 @@ const App = (): React.JSX.Element => {
 				</View>
 			</View>
 		</SafeAreaView>
-	)
+	);
 }
 
 export default App;
